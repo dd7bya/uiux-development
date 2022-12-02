@@ -13,7 +13,6 @@ import Form from 'react-bootstrap/Form';
 export default function FilterSortBar(props) {
 
     const onChange = event => {
-        //console.log(event.target.value, event.target.checked);
         props.handleEqFilterChange(event.target.value, event.target.checked);
         // update states to change which items are shown
     }
@@ -73,7 +72,7 @@ export default function FilterSortBar(props) {
                                         type='checkbox'
                                         id={label}
                                         label={label}
-                                        value={label}
+                                        value={label.toLowerCase()}
                                         onChange={onChange}
                                     />
                                 </NavDropdown.ItemText>

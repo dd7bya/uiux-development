@@ -81,13 +81,15 @@ function App() {
   const handleEqFilterChange = (value, isChecked) => {
     if (isChecked) {
       setCheckedFilters([...checkedFilters, value.toLowerCase()]);
+      console.log(checkedFilters)
     }
     else if (!isChecked){ //unchecked
       const index = checkedFilters.indexOf(value.toLowerCase());
-      let newCheckedFilters = checkedFilters.splice(index, 1); //remove 1 item at that index
+      let newCheckedFilters = checkedFilters; //remove 1 item at that index
+      newCheckedFilters.splice(index, 1); //splice returns a new array of removed elements, not the original array modified.
       setCheckedFilters(newCheckedFilters);
+      console.log(checkedFilters)
     }
-    console.log(checkedFilters)
   }
 
   const matchesEquipmentFilterTypes = (item) => {
@@ -102,7 +104,8 @@ function App() {
     }
   }
   //creates a filtering condition for equipment
-  let filteredData = itemData.filter(matchesTargetFilterType).filter(matchesEquipmentFilterTypes)
+
+  
 
 
   return (
