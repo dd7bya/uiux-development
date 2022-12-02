@@ -27,11 +27,11 @@ workoutData.forEach((item) => {
 //sorts itemData, and then filters to a new variable, filteredData
 
 function App() {
-  const [targetFilterType, setTargetType] = useState("All");
   const [cartData, setCart] = useState([]); //cart starts as empty list
   const [totCalories, setCalSum] = useState(0); //aggregated calories starts at 0
-  const [itemData, setItems] = useState(workoutData); //changes upon sort
+  const [targetFilterType, setTargetType] = useState("All");
   const [checkedFilters, setCheckedFilters] = useState([]);
+  const [itemData, setItems] = useState(workoutData); //changes upon sort
 
 
   const addItem = (item) => {
@@ -81,14 +81,12 @@ function App() {
   const handleEqFilterChange = (value, isChecked) => {
     if (isChecked) {
       setCheckedFilters([...checkedFilters, value.toLowerCase()]);
-      console.log(checkedFilters)
     }
     else if (!isChecked){ //unchecked
       const index = checkedFilters.indexOf(value.toLowerCase());
-      let newCheckedFilters = checkedFilters; //remove 1 item at that index
+      let newCheckedFilters = [...checkedFilters]; //remove 1 item at that index
       newCheckedFilters.splice(index, 1); //splice returns a new array of removed elements, not the original array modified.
       setCheckedFilters(newCheckedFilters);
-      console.log(checkedFilters)
     }
   }
 
@@ -105,7 +103,7 @@ function App() {
   }
   //creates a filtering condition for equipment
 
-  
+  let filteredData = itemData.filter(matchesTargetFilterType).filter(matchesEquipmentFilterTypes)
 
 
   return (
