@@ -1,0 +1,11 @@
+.image-thumb {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+}
+.ItemCard {
+    padding:  0 1.5rem 2rem 1.5rem;
+}
+.card-title {
+    margin-bottom: 0rem !important;
+}

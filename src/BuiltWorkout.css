@@ -1,0 +1,24 @@
+.btn-icon {
+    padding: 1.1rem !important;
+    border-radius: 60px !important;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1;
+    box-shadow: 0 0 15px 0px #0d6efd;
+}
+
+.subtext {
+    font-size: 0.7rem;
+}
+
+.inline-text {
+    padding-left: 0.5rem;
+}
+
+.offcanvas-body {
+    flex-grow: 0 !important;
+}
+.menu-list {
+    margin-bottom: 1rem !important;
+}

@@ -1,0 +1,123 @@
+[
+    {
+        "name": "Squat",
+        "caloriesBurned": 15.2,
+        "equipment": ["weights"],
+        "optional": true,
+        "bodyPart": "Legs",
+        "image": "squat.jpeg"
+    },
+    {
+        "name": "Bicep Curls",
+        "caloriesBurned": 10.1,
+        "equipment": ["weights", "machine"],
+        "optional": false,
+        "bodyPart": "Arms",
+        "image": "biCurls.jpeg"
+    },
+    {
+        "name": "Lat Pulldown",
+        "caloriesBurned": 12.1,
+        "equipment": ["machine"],
+        "optional": false,
+        "bodyPart": "Back",
+        "image": "latPulldown.jpeg"
+    },
+    {
+        "name": "Push Up",
+        "caloriesBurned": 10.9,
+        "equipment": ["weights"],
+        "optional": true,
+        "bodyPart": "Chest",
+        "image": "pushUp.jpeg"
+    },
+    {
+        "name": "Romanian Deadlift",
+        "caloriesBurned": 12.1,
+        "equipment": ["weights"],
+        "optional": false,
+        "bodyPart": "Legs",
+        "image": "rdl.png"
+    },
+    {
+        "name": "Hamstring Curl",
+        "caloriesBurned": 13.8,
+        "equipment": ["yoga ball", "machine"],
+        "optional": false,
+        "bodyPart": "Legs",
+        "image": "hamCurl.jpeg"
+    },
+    {
+        "name": "Shoulder Press",
+        "caloriesBurned": 10.2,
+        "equipment": ["weights", "machine"],
+        "optional": false,
+        "bodyPart": "Arms",
+        "image": "sPress.jpeg"
+    },
+    {
+        "name": "Reverse Lunge",
+        "caloriesBurned": 16.4,
+        "equipment": ["weights"],
+        "optional": true,
+        "bodyPart": "Legs",
+        "image": "revLunge.png"
+    },
+    {
+        "name": "Calf Raises",
+        "caloriesBurned": 9.9,
+        "equipment": ["weights", "machine"],
+        "optional": true,
+        "bodyPart": "Legs",
+        "image": "calfRaise.jpg"
+    },
+    {
+        "name": "Lateral Raise",
+        "caloriesBurned": 11.2,
+        "equipment": ["weights", "machine"],
+        "optional": false,
+        "bodyPart": "Arms",
+        "image": "latRaise.jpeg"
+    },
+    {
+        "name": "Pull Up",
+        "caloriesBurned": 12.7,
+        "equipment": ["machine"],
+        "optional": false,
+        "bodyPart": "Back",
+        "image": "pullUp.jpeg"
+    },
+    
+    {
+        "name": "Chest Press",
+        "caloriesBurned": 10.1,
+        "equipment": ["machine", "weights"],
+        "optional": false,
+        "bodyPart": "Chest",
+        "image": "chestPress.jpeg"
+    },
+    {
+        "name": "Hip Thrust",
+        "caloriesBurned": 17.1,
+        "equipment": ["weights", "bench", "machine"],
+        "optional": true,
+        "bodyPart": "Legs",
+        "image": "hipThrust.jpeg"
+    },
+    {
+        "name": "Tricep Dip",
+        "caloriesBurned": 9.7,
+        "equipment": ["weights", "machine", "bench"],
+        "optional": false,
+        "bodyPart": "Arms",
+        "image": "triDips.jpeg"
+    },
+    {
+        "name": "Seated Row",
+        "caloriesBurned": 12.1,
+        "equipment": ["machine"],
+        "optional": false,
+        "bodyPart": "Back",
+        "image": "sRow.jpeg"
+    }
+]
