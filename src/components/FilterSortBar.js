@@ -13,8 +13,8 @@ import Form from 'react-bootstrap/Form';
 export default function FilterSortBar(props) {
 
     const onChange = event => {
-        console.log(event.target.value, event.target.checked);
-        props.handleFilterChange(event.target.value, event.target.checked);
+        //console.log(event.target.value, event.target.checked);
+        props.handleEqFilterChange(event.target.value, event.target.checked);
         // update states to change which items are shown
     }
 
@@ -58,7 +58,7 @@ export default function FilterSortBar(props) {
                                     name='bodyPart-sort'
                                     id={label}
                                     label={label}
-                                    onClick={() => props.selectFilterType(label)}
+                                    onClick={() => props.handleTargetFilterChange(label)}
                                 />
                                 </NavDropdown.ItemText>
                             }

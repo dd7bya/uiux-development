@@ -8,7 +8,7 @@ import workoutData from "./assets/bootcamp-data.json";
 
 
 workoutData.forEach((item) => {
-  item.image = "../images/" + item.image;
+  item.image = process.env.PUBLIC_URL + "/images/" + item.image;
 });
 
 workoutData.forEach((item) => {
@@ -32,7 +32,6 @@ function App() {
   const [totCalories, setCalSum] = useState(0); //aggregated calories starts at 0
   const [itemData, setItems] = useState(workoutData); //changes upon sort
   const [checkedFilters, setCheckedFilters] = useState([]);
-
 
 
   const addItem = (item) => {
@@ -60,7 +59,7 @@ function App() {
     setItems(workoutData)
   }
 
-  const selectFilterType = (target) => { //filter by target
+  const handleTargetFilterChange = (target) => { //filter by target
     setTargetType(target);
   };
   /* sets the state to the selected type, function passed to
@@ -79,16 +78,16 @@ function App() {
   }
   //creates a filtering condition for body part
 
-  const handleFilterChange = (value, isChecked) => {
+  const handleEqFilterChange = (value, isChecked) => {
     if (isChecked) {
       setCheckedFilters([...checkedFilters, value]);
     }
-    else { //unchecked
+    else if (!isChecked){ //unchecked
       const index = checkedFilters.indexOf(value);
       let newCheckedFilters = checkedFilters.splice(index, 1); //remove 1 item at that index
       setCheckedFilters(newCheckedFilters);
     }
-    //console.log(checkedFilters)
+    console.log(checkedFilters)
   }
 
   const matchesEquipmentFilterTypes = (item) => {
@@ -103,18 +102,17 @@ function App() {
     }
   }
   //creates a filtering condition for equipment
-  
-  const filteredData = itemData.filter(matchesTargetFilterType).filter(matchesEquipmentFilterTypes)
-  
+  let filteredData = itemData.filter(matchesTargetFilterType).filter(matchesEquipmentFilterTypes)
+
 
   return (
 
     <div className="App">
       <h1 className="fw-bold display-2">BOOTCAMP BUILDER</h1>
-      <FilterSortBar sortData={sortData} resetSort={resetSort} selectFilterType={selectFilterType} handleFilterChange={handleFilterChange} />
+      <FilterSortBar sortData={sortData} resetSort={resetSort} handleTargetFilterChange={handleTargetFilterChange} handleEqFilterChange={handleEqFilterChange} />
 
       {['end'].map((placement) => (
-        <BuiltWorkout placement={placement} name={placement} cartData={cartData} totCalories={totCalories} remItem={remItem} selectFilterType={selectFilterType} />
+        <BuiltWorkout placement={placement} name={placement} cartData={cartData} totCalories={totCalories} remItem={remItem} />
       ))}
 
 
