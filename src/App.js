@@ -21,7 +21,7 @@ workoutData.forEach((item) => {
 });
 
 workoutData.forEach((item) => {
-  item.equipment = item.equipment.join(", ")
+  item.equipmentString = item.equipment.join(", ")
 });
 
 //sorts itemData, and then filters to a new variable, filteredData
@@ -36,7 +36,7 @@ function App() {
 
   const addItem = (item) => {
     setCart([...cartData, {
-      name: item.name, caloriesBurned: item.caloriesBurned, equipment: item.equipment, optional: item.optional, bodyPart: item.bodyPart, image: item.image,
+      name: item.name, caloriesBurned: item.caloriesBurned, equipment: item.equipment, equipmentString: item.equipmentString, optional: item.optional, bodyPart: item.bodyPart, image: item.image,
       key: Date.now()
     }]);
     setCalSum(parseFloat((totCalories + item.caloriesBurned).toFixed(1)))
@@ -80,10 +80,10 @@ function App() {
 
   const handleEqFilterChange = (value, isChecked) => {
     if (isChecked) {
-      setCheckedFilters([...checkedFilters, value]);
+      setCheckedFilters([...checkedFilters, value.toLowerCase()]);
     }
     else if (!isChecked){ //unchecked
-      const index = checkedFilters.indexOf(value);
+      const index = checkedFilters.indexOf(value.toLowerCase());
       let newCheckedFilters = checkedFilters.splice(index, 1); //remove 1 item at that index
       setCheckedFilters(newCheckedFilters);
     }
@@ -94,7 +94,7 @@ function App() {
     if (checkedFilters.length === 0) { //no selected filters
       return true;
     }
-    else if (checkedFilters.includes("Not required") && item.optional === true) { //equipment is optional for item, and "None" is selected
+    else if (checkedFilters.includes("not required") && item.optional === true) { //equipment is optional for item, and "None" is selected
       return true;
     }
     else {
@@ -118,7 +118,7 @@ function App() {
 
       <div className="Exercises">
         {filteredData.map((item) => {
-          return (<ItemCard name={item.name} image={item.image} caloriesBurned={item.caloriesBurned} optionalString={item.optionalString} equipment={item.equipment} bodyPart={item.bodyPart} addItem={addItem} />);
+          return (<ItemCard name={item.name} image={item.image} caloriesBurned={item.caloriesBurned} optionalString={item.optionalString} equipment={item.equipment} equipmentString={item.equipmentString} bodyPart={item.bodyPart} addItem={addItem} />);
         })}
       </div>
 

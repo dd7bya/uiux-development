@@ -18,7 +18,7 @@ export default function ItemCard(props) {
         <ListGroup className="list-group-flush">
         <ListGroup.Item>Targets: <span className="fw-bold">{props.bodyPart}</span></ListGroup.Item>
         <ListGroup.Item>Burns: <span className="fw-bold">{props.caloriesBurned} calories</span></ListGroup.Item>
-        <ListGroup.Item>Equipment<span className="fst-italic red">{props.optionalString}</span>: {props.equipment}</ListGroup.Item>
+        <ListGroup.Item>Equipment<span className="fst-italic red">{props.optionalString}</span>: {props.equipmentString}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
         <Button variant="primary" className="fw-bold" onClick={() => props.addItem(props)}>Add to workout</Button>
